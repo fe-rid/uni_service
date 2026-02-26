@@ -7,10 +7,10 @@
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  GraduationCap, 
-  Users, 
-  Shield, 
+import {
+  GraduationCap,
+  Users,
+  Shield,
   Zap,
   ArrowRight,
   BookOpen,
@@ -104,15 +104,17 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-        
-        <div className="container relative mx-auto px-4">
+        {/* Background Aurora Blobs */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-accent/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-violet-500/10 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,14 +131,12 @@ export default function Index() {
               <span>For University Students, By University Students</span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
-              Get Help From Your
-              <span className="gradient-text block">Campus Community</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight">
+              Empower Your <span className="gradient-text block mt-2">Campus Life</span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Connect with fellow students for tutoring, moving help, cleaning, and more. 
-              Affordable services from people who understand student life.
+
+            <p className="text-lg md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+              The premium marketplace for university services. Tutoring, moving, or anything in between—get it done by students you trust.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -204,7 +204,7 @@ export default function Index() {
               <motion.div
                 key={feature.title}
                 variants={fadeInUp}
-                className="bg-background rounded-2xl p-8 border border-border hover-lift"
+                className="glass-card rounded-2xl p-8 hover-lift"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <feature.icon className="h-7 w-7 text-primary" />
@@ -361,8 +361,8 @@ export default function Index() {
               Join thousands of students already using UniService to get help and earn money.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
-                size="xl" 
+              <Button
+                size="xl"
                 className="bg-background text-primary hover:bg-background/90"
                 asChild
               >
@@ -370,8 +370,8 @@ export default function Index() {
                   Find Help
                 </Link>
               </Button>
-              <Button 
-                size="xl" 
+              <Button
+                size="xl"
                 variant="outline"
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
                 asChild
